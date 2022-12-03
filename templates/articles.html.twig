@@ -1,0 +1,53 @@
+<!-- Page content-->
+<div class="container">
+	<div class="text-center mt-5">
+		<h1>Créez ou modifiez votre article !</h1>
+		<br>
+	</div>
+
+
+	<form id="articleForm" method="POST" action="articles.php" enctype="multipart/form-data">
+		<input type='hidden' name='id' value="{{ getArticlesId.getId }}">
+		<div class="mb-3">
+			<div class="row">
+				<div class="col-8 offset-2">
+					<label for="titre" class="form-label">Titre</label>
+					<input type="text" name="titre" class="form-control" value="{{ getArticlesId.getTitre }}" id="titre" required>
+				</div>
+			</div>
+		</div>
+		<div class="mb-3">
+			<div class="row">
+				<div class="col-8 offset-2">
+					<label for="texte" class="form-label">Texte</label>
+					<textarea class="form-control" name="texte" id="texte" rows="3" required>{{ getArticlesId.getTexte }}</textarea>
+				</div>
+			</div>
+		</div>
+		<div class="mb-3">
+			<div class="row">
+				<div class="col-8 offset-2">
+					<img src="img/{{ getArticlesId.getId }}.jpg" style="max-width: 100px;" class="card-img-top" alt="{{ getArticlesId.getTitre }}">
+					<br>
+					<br>
+					<input type="file" name="image" class="form-control" id="file">
+				</div>
+			</div>
+		</div>
+		<div class="mb-3 form-check">
+			<div class="row">
+				<div class="col-8 offset-2">
+					<input type="checkbox" name="publie" class="form-check-input" id="publie" value="1">
+					<label class="form-check-label" for="publie">Publier l'article ?</label>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-8 offset-2">
+				<button type="submit" name="submit" class="btn btn-primary" value="ooo">Ajouter mon article</button>
+			</div>
+		</div>
+	</form>
+
+
+</div>
